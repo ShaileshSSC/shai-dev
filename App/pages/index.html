@@ -12,11 +12,40 @@
         <div class="hero-image"></div>
         <div class="hero-overlay"></div>
         <span class="hero-text">Shailesh <br>Chotoe</span>
+        <a href="www.google.com" class="hero-button">
+        Contact
+        </a>
     </div>
 
     <div class="section">
         <h1 class="section-text">About me</h1>
+        <h1 class="section-text">Projects</h1>
+        <h1 class="section-text">Contact</h1>
+        <h1 class="section-text">Company</h1>
     </div>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+<script>
+var textWrapper = document.querySelector('.hero-text');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.hero-text .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 2250,
+    delay: (el, i) => 150 * (i+1)
+  })
+  .add({
+    targets: '.hero-button',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 2250,
+    delay: (el, i) => 150 * (i+1)
+  });
+</script>
 </body>
 </html>
