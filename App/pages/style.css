@@ -38,14 +38,14 @@ body, html {
     font-size: 150px;
     transform: translate(-150%, -50%);
     font-family: Saman;
-    color: rgb(rgb(175, 111, 37));
-    text-shadow: black 2px;
+    color: rgb(57 32 12);
+    text-shadow: 0px 0px 2px black;
 }
 
 
 .section {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     height: 30%;
     background-color: black;
@@ -54,10 +54,15 @@ body, html {
 
 .section-text {
     margin: 0;
+    margin-right: 2em;
     font-family: Saman;
-    color: rgb(rgb(175, 111, 37));
     font-size: 100px;
-    color: rgb(47, 47, 47);
+    background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('background.jpeg');
+    background-size: 200px 200px;
+
 }
 
 
