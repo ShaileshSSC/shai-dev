@@ -1,0 +1,13 @@
+body {
+    background-image: url("background.jpeg");
+    background-size: 200px 200px;
+}
+
+@font-face {
+    font-family: "Saman";
+    src: url('SAMAN___.ttf');
+}
+
+h1 {
+    font-family: Saman;
+}
