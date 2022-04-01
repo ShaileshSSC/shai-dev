@@ -90,6 +90,7 @@ body, html {
 	color: transparent;
 	background-image: url('background.jpeg');
     background-size: 200px 200px;
+    text-decoration: none;
 
 }
 
