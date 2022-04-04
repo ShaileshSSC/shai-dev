@@ -1,0 +1,105 @@
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "Saman";
+    src: url('SAMAN___.ttf');
+}
+
+.hero-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("background.jpeg");
+    background-size: 200px 200px;
+}
+
+.hero-overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,1) 100%);
+}
+
+
+.hero-button {
+    position: absolute;
+    top: 44%;
+    left: 60%;
+    text-decoration: none;
+    font-size: 100px;
+    margin: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Saman;
+    color: rgb(57 32 12);
+    transform-origin: 50% 50%;
+    background-color: rgb(255 201 150 / 56%);
+    transition: background-color 0.8s;
+    opacity: 0;
+}
+
+
+.hero-button:hover {
+    transition: background-color 0.8s;
+    background-color: rgba(255, 201, 150, 0.794);
+}
+
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 150px;
+    transform: translate(-75%, -50%);
+    font-family: Saman;
+    color: rgb(57 32 12);
+    text-shadow: 0px 0px 2px black;
+}
+
+
+.section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    background-color: black;
+}
+
+
+.section-text {
+    margin: 0;
+    text-align: center;
+    font-family: Saman;
+    font-size: 75px;
+    background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('background.jpeg');
+    background-size: 200px 200px;
+    text-decoration: none;
+
+}
+
+
+
+
+
+
+
+
+
+
