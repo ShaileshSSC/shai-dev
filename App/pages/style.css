@@ -4,6 +4,10 @@ body, html {
     overflow: hidden;
 }
 
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 .hero-container {
     width: 100%;
     height: 100%;
@@ -50,7 +54,7 @@ body, html {
 .pp3 {
     text-align: center;
     font-size: 10em;
-    color: rgb(51, 255, 0);
+    color: rgb(255, 139, 56);
 }
 
 #img3 {
@@ -67,6 +71,26 @@ body, html {
 .hero-image {
     -webkit-scroll-snap-align: start;
     scroll-snap-align: start;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .pp {
+        text-align: center;
+        font-size: 2em;
+        color: rgb(6, 20, 73);
+    }
+    
+    .pp1 {
+        text-align: center;
+        font-size: 4em;
+        color: white;
+    }
+    
+    .pp3 {
+        text-align: center;
+        font-size: 2em;
+        color: rgb(255, 139, 56);
+    }
   }
 
 
