@@ -6,15 +6,23 @@ body, html {
     background: black;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+  }
+
 
 html:focus-within {
   scroll-behavior: smooth;
 }
+html {
+    scrollbar-width: none;
+  }
 
 .hero-container {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
     -webkit-scroll-snap-type: y mandatory;
     scroll-snap-type: y mandatory;
 }
@@ -22,15 +30,30 @@ html:focus-within {
 
 #img1 {
     position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.scale-container {
+    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background: black;
     height: 100%;
     width: 100%;
     background-color: rgb(0, 0, 0);
+    transition: transform 0.5s;
 }
+
+.show .scale-container {
+    transform: scale(0.7);
+    top: 0;
+    transition: transform 0.5s;
+}
+
+
 
 #img2 {
     display: flex;
@@ -54,15 +77,30 @@ html:focus-within {
     text-align: center;
     font-size: 9em;
     color: white;
+    opacity: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transform: translateX(10%);
 }
+
+
+.onload .pp1 {
+    opacity: 1;
+    transform: translateX(0%);
+    transition-timing-function: ease-in-out;
+    transition: opacity 2s, transform 2.2s;
+}
+
 
 .pp3 {
     text-align: center;
     font-size: 11em;
-    color: rgb(255 169 0);
+    color: rgb(255, 255, 255);
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pp3 > span {
+    color: rgb(139, 250, 48);
 }
 
 #img3 {
@@ -92,10 +130,18 @@ html:focus-within {
 .hamburger-container {
     margin-left: 80px;
     display: flex;
+    opacity: 0;
     flex-direction: column;
     justify-content: space-evenly;
+    transform: translateX(100%);
     align-items: center;
+    cursor: pointer;
+    transform: translateX(200%);
+    transition: transform 1s;
+
 }
+
+
 
 .hamburger-layer {
     border-radius: 10px;
@@ -105,6 +151,13 @@ html:focus-within {
     background: white;
 }
 
+.onload .hamburger-container {
+    opacity: 1;
+    transform: translateX(0%);
+    transition-timing-function: ease-in-out;
+    transition: opacity 5s, transform 2.2s;
+}
+
 
 
 .hero-image {
@@ -112,7 +165,9 @@ html:focus-within {
     scroll-snap-align: start;
   }
 
-  @media only screen and (max-width: 600px) {
+
+
+  @media only screen and (max-width: 650px) {
     .pp {
         text-align: center;
         font-size: 2em;
@@ -129,6 +184,39 @@ html:focus-within {
         text-align: center;
         font-size: 3em;
         color: rgb(255, 139, 56);
+    }
+
+    .hero-top-section {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        flex-direction: row;
+        justify-content: start;
+        top: 10px;
+        left: 0;
+    }
+    
+    .hamburger-container {
+        margin-left: 40px;
+        display: flex;
+        opacity: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        transform: translateX(100%);
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .hamburger-layer {
+        border-radius: 10px;
+        width: 50px;
+        margin-top: 1em;
+        height: 4px;
+        background: white;
     }
   }
 

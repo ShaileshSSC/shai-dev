@@ -10,18 +10,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Encode+Sans:wght@700&family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body">
 
     <div class="hero-container">
         <div id="img1" class="hero-image">
-            <div class="hero-top-section">
-                <div class="hamburger-container">
+
+        <div class="scale-container">
+        <div class="hero-top-section">
+                <div id="menu" class="hamburger-container">
                 <div class="hamburger-layer"></div>
                 <div class="hamburger-layer"></div>
                 </div>
             </div>
+            <div class="pp1">Software Engineer</div>
+        </div>
 
-         <div class="pp1">Shailesh Chotoe</div>
 
         </div>
         <div id="img2" class="hero-image">
@@ -29,10 +32,18 @@
         <div class="pp">Right</div>
         </div>
         <div id="img3" class="hero-image">
-        <div class="pp3">Coming soon</div>
+        <div class="pp3">Keep it <span>Simple</span></div>
         </div>
     </div>
     
+    <script>
+    window.onload = function() {
+    document.documentElement.classList.add('onload');
+    };
+    document.getElementById("menu").onclick = function() {
+        document.getElementById("body").classList.toggle("show");
+    };
+    </script>
 
 </body>
 </html>
