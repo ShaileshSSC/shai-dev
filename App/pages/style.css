@@ -6,6 +6,7 @@ body, html {
     background: black;
 }
 
+
 html:focus-within {
   scroll-behavior: smooth;
 }
@@ -20,6 +21,7 @@ html:focus-within {
 
 
 #img1 {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -45,21 +47,22 @@ html:focus-within {
     text-align: center;
     font-size: 8em;
     color: rgb(6, 20, 73);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .pp1 {
     text-align: center;
-    font-size: 10em;
+    font-size: 9em;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .pp3 {
     text-align: center;
-    font-size: 14em;
-    color: rgb(255, 139, 56);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 11em;
+    color: rgb(255 169 0);
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #img3 {
@@ -67,11 +70,42 @@ html:focus-within {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background: black;
     height: 100%;
     width: 100%;
     background-color: rgb(0, 0, 0);
 }
+
+.hero-top-section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    flex-direction: row;
+    justify-content: start;
+    top: 20px;
+    left: 0;
+}
+
+.hamburger-container {
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hamburger-layer {
+    border-radius: 10px;
+    width: 65px;
+    margin-top: 1.2em;
+    height: 5px;
+    background: white;
+}
+
+
 
 .hero-image {
     -webkit-scroll-snap-align: start;
