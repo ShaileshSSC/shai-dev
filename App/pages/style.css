@@ -6,15 +6,32 @@ body, html {
     background: black;
 }
 
+.show .hero-container {
+    overflow: hidden;
+}
+
+
+.hero-container::-webkit-scrollbar {
+    display: none;
+  }
+
+.show html::-webkit-scrollbar {
+    width: 0px; /* For Chrome, Safari, and Opera */
+}
+
 
 html:focus-within {
   scroll-behavior: smooth;
 }
+html {
+    scrollbar-width: none;
+  }
 
 .hero-container {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
     -webkit-scroll-snap-type: y mandatory;
     scroll-snap-type: y mandatory;
 }
@@ -22,22 +39,29 @@ html:focus-within {
 
 #img1 {
     position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.scale-container {
+    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background: black;
     height: 100%;
     width: 100%;
     background-color: rgb(0, 0, 0);
+    transition: transform 0.5s;
 }
+
 
 #img2 {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-
     height: 100%;
     width: 100%;
     background-color: rgb(255, 255, 255);
@@ -54,15 +78,33 @@ html:focus-within {
     text-align: center;
     font-size: 9em;
     color: white;
+    opacity: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transform: translateX(10%);
 }
+
+
+
+.onload .pp1 {
+    opacity: 1;
+    transform: translateX(0%);
+    transition-timing-function: ease-in-out;
+    transition: opacity 2s, transform 2.2s;
+}
+
+
+
 
 .pp3 {
     text-align: center;
     font-size: 11em;
-    color: rgb(255 169 0);
+    color: rgb(255, 255, 255);
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pp3 > span {
+    color: rgb(250, 213, 48);
 }
 
 #img3 {
@@ -76,33 +118,56 @@ html:focus-within {
 }
 
 .hero-top-section {
+
     display: flex;
     justify-content: start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
     width: 100%;
     height: 150px;
     position: absolute;
     flex-direction: row;
     justify-content: start;
-    top: 20px;
+
+    top: 0;
     left: 0;
 }
 
 .hamburger-container {
+    z-index: 10;
     margin-left: 80px;
     display: flex;
+    opacity: 0;
     flex-direction: column;
     justify-content: space-evenly;
+    transform: translateX(100%);
     align-items: center;
+    cursor: pointer;
+    height: 45%;
+    transform: translateX(200%);
+    transition: transform 1s;
+
 }
+
+
 
 .hamburger-layer {
     border-radius: 10px;
     width: 65px;
-    margin-top: 1.2em;
     height: 5px;
-    background: white;
+    background-color: white;
+    transition: background-color 0.5s;
+}
+
+.show .hamburger-layer{
+    background-color: black;
+    transition: background-color 0.5s;
+}
+
+.onload .hamburger-container {
+    opacity: 1;
+    transform: translateX(0%);
+    transition-timing-function: ease-in-out;
+    transition: opacity 5s, transform 2.2s;
 }
 
 
@@ -112,10 +177,58 @@ html:focus-within {
     scroll-snap-align: start;
   }
 
-  @media only screen and (max-width: 600px) {
+  .menu-container {
+    z-index: 9;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+  }
+
+  .menu-item {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: rgb(14, 3, 44);
+    justify-content: end;
+    align-items: center;
+    margin-right: 150px;
+    font-size: 4em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: color 1s;
+    cursor: pointer;
+  }
+
+  .show .menu-container {
+    transform: translateY(0%);
+    transition: transform 0.5s;
+}
+
+.show .scale-container {
+    transform: translateY(100%);
+    transition: transform 0.5s;
+}
+
+.menu-item:hover{
+    color: rgb(40, 124, 219);
+    transition: color 1s;
+}
+
+
+
+  @media only screen and (max-width: 650px) {
     .pp {
         text-align: center;
-        font-size: 2em;
+        font-size: 3em;
         color: rgb(6, 20, 73);
     }
     
@@ -128,8 +241,51 @@ html:focus-within {
     .pp3 {
         text-align: center;
         font-size: 3em;
-        color: rgb(255, 139, 56);
+        color: rgb(255, 255, 255);
     }
+
+    .hero-top-section {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        flex-direction: row;
+        justify-content: start;
+        top: 10px;
+        left: 0;
+    }
+    
+    .hamburger-container {
+        margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transform: translateX(100%);
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .hamburger-layer {
+        border-radius: 10px;
+        width: 50px;
+        height: 4px;
+        background-color: white;
+    }
+
+    .menu-item {
+        display: flex;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        color: rgb(14, 3, 44);
+        justify-content: end;
+        align-items: center;
+        margin-right: 58px;
+        font-size: 2em;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
   }
 
 
