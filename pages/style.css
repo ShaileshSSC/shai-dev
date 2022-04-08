@@ -227,10 +227,13 @@ html {
     transition: transform 0.5s;
 }
 
-.menu-item:hover{
+@media (hover: hover) {
+  .menu-item:hover{
     color: rgb(40, 124, 219);
     transition: color 1s;
 }
+}
+
 
 
 
@@ -266,7 +269,8 @@ html {
     }
     
     .hamburger-container {
-        margin-left: 40px;
+        margin-top: 35px;
+        margin-left: 45px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -280,7 +284,9 @@ html {
         width: 50px;
         height: 4px;
         background-color: white;
+        transition: transform 0.5s, background-color 0.5s;
     }
+
 
     .menu-item {
         display: flex;
@@ -290,11 +296,12 @@ html {
         justify-content: flex-end;
         align-items: center;
         margin: 0;
-        margin-right: 45px;
+        margin-right: 60px;
         text-align: center;
-        font-size: 2em;
+        font-size: 1.8em;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       }
+
 
       .menu-container {
           position: static;
