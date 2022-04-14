@@ -106,11 +106,13 @@ html {
     width: 70%;
     align-items: flex-start;
     background-color: rgb(255, 255, 255);
+    color: rgb(2, 32, 87);
 }
 
 .box1 > p {
     font-weight: normal;
     font-size: 0.4em;
+    color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
