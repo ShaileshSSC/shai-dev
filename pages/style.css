@@ -89,7 +89,7 @@ html {
     transition: background-color 0.3s, color 0.3s;
     color: rgb(5, 4, 4);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 5em;
+    font-size: 6em;
     font-weight: medium;
     display: flex;
     flex-direction: column;
@@ -97,17 +97,23 @@ html {
     align-items: center;
 }
 
+.box2 {
+    justify-content: space-evenly;
+}
+
 .box1 {
+    width: 70%;
+    align-items: flex-start;
     background-color: rgb(255, 255, 255);
 }
 
 .box1 > p {
-    font-size: 0.5em;
+    font-size: 0.4em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .boxes > img {
-    max-width: 30%;
+    max-width: 50%;
     height: auto;
 }
 
@@ -330,41 +336,52 @@ button:active {
 }
 
 button {
- padding: 0.8em 1.8em;
- border: 2px solid #000000;
- position: relative;
- overflow: hidden;
- background-color: transparent;
- text-align: center;
  font-size: 25px;
- transition: .3s;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ font-weight: bold;
+ display: inline-block;
+ text-align: center;
+ padding: 0.7em 2em;
+ border: 3px solid #000000;
+ border-radius: 2px;
+ position: relative;
+ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+ color: #000000;
+ text-decoration: none;
+ transition: 0.3s ease all;
  z-index: 1;
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
- color: #000000;
 }
 
-button::before {
- content: '';
- width: 0;
- height: 300%;
+button:before {
+ transition: 0.5s all ease;
  position: absolute;
- top: 50%;
+ top: 0;
  left: 50%;
-
- background: #000000;
- transition: .5s ease;
- display: block;
+ right: 50%;
+ bottom: 0;
+ opacity: 0;
+ content: '';
+ background-color: #000000;
  z-index: -1;
 }
 
-button:hover::before {
- width: 105%;
+button:hover, button:focus {
+ color: white;
+ cursor: pointer;
 }
 
-button:hover {
- color: #111;
+button:hover:before, button:focus:before {
+ transition: 0.5s all ease;
+ left: 0;
+ right: 0;
+ opacity: 1;
 }
 
+button:active {
+ transform: scale(0.9);
+}
 
 
 
