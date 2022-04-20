@@ -59,7 +59,10 @@ html {
 }
 
 
+
+
 #img2 {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -69,12 +72,110 @@ html {
     background-color: rgb(255, 255, 255);
 }
 
-.pp {
-    text-align: center;
-    font-size: 8em;
-    color: rgb(6, 20, 73);
+.box-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.boxes {
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    transition: background-color 0.3s, color 0.3s;
+    color: rgb(5, 4, 4);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 6em;
+    font-weight: medium;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box2 {
+    justify-content: space-evenly;
+}
+
+.box1 {
+    font-weight: 600;
+    width: 70%;
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    color: rgb(2, 32, 87);
+}
+
+.box1 > p {
+    font-weight: normal;
+    font-size: 0.4em;
+    color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.boxes > img {
+    max-width: 30%;
+    height: auto;
+}
+
+/* @media (hover: hover) {
+.boxes:hover {
+    cursor: pointer;
+    background-color: rgb(246, 246, 246);
+    transition: background-color 0.3s, color 0.3s;
+    color: rgb(0, 0, 0);
+}
+} */
+
+
+button {
+ font-size: 30px;
+ letter-spacing: 2px;
+ display: inline-block;
+ text-align: center;
+ padding: 0.7em 2em;
+ border: 3px solid black;
+ border-radius: 2px;
+ position: relative;
+ color: #000000;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ text-decoration: none;
+ transition: 0.3s ease all;
+ z-index: 1;
+ background-color: transparent;
+}
+
+button:before {
+ transition: 0.5s all ease;
+ position: absolute;
+ top: 0;
+ left: 50%;
+ right: 50%;
+ bottom: 0;
+ opacity: 0;
+ content: '';
+ background-color: #000000;
+ z-index: -1;
+}
+
+button:hover, button:focus {
+ color: white;
+}
+
+button:hover:before, button:focus:before {
+ transition: 0.5s all ease;
+ left: 0;
+ right: 0;
+ opacity: 1;
+}
+
+button:active {
+ transform: scale(0.9);
+}
+
 
 .pp1 {
     text-align: center;
@@ -152,8 +253,10 @@ html {
     background-color: rgba(255, 255, 255, 1);
     top: 0;
     left: 0;
-    transform: translateY(-120%); 
-    transition: transform 0.5s;
+    transform: scale(2);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s, opacity 0.5s;
   }
 
 .hamburger-container {
@@ -211,38 +314,83 @@ html {
     justify-content: end;
     align-items: center;
     margin-right: 150px;
-    font-size: 4em;
+    font-size: 3em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transition: color 1s;
+    transition: color 0.5s;
     cursor: pointer;
   }
 
   .show .menu-container {
-    transform: translateY(0%);
-    transition: transform 0.5s;
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    transition: transform 0.5s, opacity 0.5s;
 }
 
 .show .scale-container {
-    transform: translateY(100%);
+    transform: scale(0.5);
     transition: transform 0.5s;
 }
 
 @media (hover: hover) {
   .menu-item:hover{
-    color: rgb(40, 124, 219);
-    transition: color 1s;
+    color: rgb(19, 91, 173);
+    transition: color 0.5s;
 }
 }
 
+button {
+ font-size: 25px;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ font-weight: bold;
+ display: inline-block;
+ text-align: center;
+ padding: 0.7em 2em;
+ border: 3px solid #000000;
+ border-radius: 2px;
+ position: relative;
+ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+ color: #000000;
+ text-decoration: none;
+ transition: 0.3s ease all;
+ z-index: 1;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button:before {
+ transition: 0.5s all ease;
+ position: absolute;
+ top: 0;
+ left: 50%;
+ right: 50%;
+ bottom: 0;
+ opacity: 0;
+ content: '';
+ background-color: #000000;
+ z-index: -1;
+}
+
+button:hover, button:focus {
+ color: white;
+ cursor: pointer;
+}
+
+button:hover:before, button:focus:before {
+ transition: 0.5s all ease;
+ left: 0;
+ right: 0;
+ opacity: 1;
+}
+
+button:active {
+ transform: scale(0.9);
+}
 
 
 
   @media only screen and (max-width: 650px) {
-    .pp {
-        text-align: center;
-        font-size: 3em;
-        color: rgb(6, 20, 73);
-    }
+
     
     .pp1 {
         text-align: center;
@@ -302,10 +450,37 @@ html {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       }
 
+      button {
+          font-size: 25px;
+      }
+
+      #img2 {
+          flex-direction: column;
+      }
+
 
       .menu-container {
           position: static;
       }
+
+    .box-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .boxes {
+        width: 50%;
+        height: 50%;
+        background: rgb(96, 143, 225);
+        margin: 1em;
+        transform: scale(1);
+        transition: transform 0.5s;
+    }
 
 
   }
